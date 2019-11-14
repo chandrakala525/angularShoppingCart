@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login-page{
+    background-image: url("./../../../assets/pngtree-blue-business-technology-information-security-banner-background-image_260805.jpg");
+    height: 640px;
+    /* position: relative; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
