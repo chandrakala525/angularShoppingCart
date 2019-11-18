@@ -14,13 +14,22 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginPopupComponent } from './components/login/login-popup/login-popup.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './components/home/users/users.component';
+import { TodosComponent } from './components/home/todos/todos.component';
+import { CommentsComponent } from './components/home/comments/comments.component';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    LoginPopupComponent
+    LoginPopupComponent,
+    UsersComponent,
+    TodosComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatTabsModule,
   ],
   providers: [
     MatSnackBar

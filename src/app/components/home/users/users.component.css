@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+}
+
+table>thead{
+    text-align: center;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0 0 8px 0 !important;
+}
+
+::ng-deep .mat-grid-tile .mat-figure {
+        justify-content: left !important;
+}

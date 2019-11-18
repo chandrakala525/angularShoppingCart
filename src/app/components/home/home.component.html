@@ -1,65 +1,8 @@
-<h4>Get Users Data</h4>
-<form class="example-form">
-  <table class="example-full-width" cellspacing="0">
-    <tr>
-      <td>
-        <label>Company Name: </label>
-      </td>
-
-      <td>
-        <mat-form-field>
-          <mat-label>select Company</mat-label>
-          <mat-select (selectionChange)="getUserDetails($event)">
-            <mat-option *ngFor="let user of usersData" [value]="user.id">
-              {{ user.company.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </td>
-      <td>
-        <!-- <button mat-raised-button (click)="login()" color="primary">
-          Login
-        </button> -->
-      </td>
-    </tr>
-  </table>
-</form>
-
-<div>
-  <table border="1" class="example-full-width" cellspacing="0"> 
-      <thead>
-          <tr>
-              <td rowspan="2">ID</td>
-              <td rowspan="2">NAME</td>
-              <td rowspan="2">USERNAME</td>
-              <td rowspan="2">EMAIL</td>
-              <td colspan="3">ADDRESS</td>
-              <td rowspan="2">PHONE</td>
-              <td rowspan="2">WEBSITE</td>
-              <td colspan="2">COMPANY</td>
-          </tr>
-          <tr>
-                <td>STREET</td>
-                <td>CITY</td>
-                <td>ZIPCODE</td>
-                <td>NAME</td>
-                <td>CATCHPHRASE</td>
-            </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let user of userDetails">
-              <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
-              <td>{{user.username}}</td>
-              <td>{{user.email}}</td>
-              <td>{{user.address.street}}</td>
-              <td>{{user.address.city}}</td>
-              <td>{{user.address.zipcode}}</td>
-              <td>{{user.phone}}</td>
-              <td>{{user.website}}</td>
-              <td>{{user.company.name}}</td>
-              <td>{{user.company.catchPhrase}}</td>
-          </tr>
-      </tbody>
-  </table>
-</div>
+<mat-tab-group>
+  <!-- <mat-tab label="Users">text1</mat-tab>
+  <mat-tab label="Todos">text2</mat-tab>
+  <mat-tab label="Comments">text3</mat-tab> -->
+  <mat-tab label="Users"> <app-users></app-users> </mat-tab>
+  <mat-tab label="Todos"> <app-todos></app-todos> </mat-tab>
+  <mat-tab label="Comments"> <app-comments></app-comments> </mat-tab>
+</mat-tab-group>
