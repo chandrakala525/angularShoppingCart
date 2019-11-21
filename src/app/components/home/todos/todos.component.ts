@@ -19,8 +19,9 @@ export class TodosComponent implements OnInit {
   todosDetails: any;
   actualPaginator: MatPaginator;
   message: string;
-  completed:any = ['True', 'False'];
-  // completedValue = null;
+  completed: any = ["", "true", "false"];
+  completedValue = null;
+  userId = "";
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
@@ -33,34 +34,51 @@ export class TodosComponent implements OnInit {
     });
   }
 
-  getTodosDetails(uid: any, status: any) {
+  getTodosDetails() {
     this.todosData = new MatTableDataSource();
+    if(this.completedValue == ""){
+      this.completedValue = null;
+    }
     if (
-      (status == null || status == "" || status == undefined) &&
-      (uid == null || uid == "" || uid == undefined)
+      (this.completedValue == null ||
+        this.completedValue == "" ||
+        this.completedValue == undefined) &&
+      (this.userId == null || this.userId == "" || this.userId == undefined)
+    ) {
+      this.message = "Please enter userId or select completed value!";
+      this.openSnakBar(this.message);
+    } else {
+      if (
+        this.completedValue != null &&
+        this.completedValue != "" &&
+        this.completedValue != undefined
       ) {
-        this.message = "Please enter userId or select completed value!";
-        this.openSnakBar(this.message);
-      } else {
-        console.log(uid, 'test', status.value);
-      if (status.value != null && status.value != "" && status.value != undefined) {
-        if (uid != null && uid != "" && uid != undefined) {
+        if (
+          this.userId != null &&
+          this.userId != "" &&
+          this.userId != undefined
+        ) {
           this.todosDetails.filteredData.forEach(element => {
-            if (element.userId == uid && element.completed == status.value) {
+            if (
+              element.userId == this.userId &&
+              '"' + element.completed + '"' == '"' + this.completedValue + '"'
+            ) {
               this.todosData.filteredData.push(element);
             }
           });
-        }else{
+        } else {
           this.todosDetails.filteredData.forEach(element => {
-            if (element.completed == status.value) {
-              console.log('hello');
+            if (
+              '"' + element.completed + '"' ==
+              '"' + this.completedValue + '"'
+            ) {
               this.todosData.filteredData.push(element);
             }
           });
         }
       } else {
         this.todosDetails.filteredData.forEach(element => {
-          if (element.userId == uid) {
+          if (element.userId == this.userId) {
             this.todosData.filteredData.push(element);
           }
         });

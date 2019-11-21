@@ -51,9 +51,7 @@ export class UsersComponent implements OnInit {
           phone: element.phone,
           website: element.website,
           companyName: element.company.name
-
         }
-        console.log(this.userDetails);
         return this.userDetails;
       }
     });

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,19 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor() { }
-  // value:string;
+  constructor(private router: Router) { }
+
+  navLinks = [
+    { path: '', label: 'Users' },
+    { path: '/users', label: 'Users' },
+    { path: '/todos', label: 'Todos' },
+    { path: '/comments', label: 'Comments' },
+  ];
+
   ngOnInit() {
-    // this.value = 'users';
-    // selectedTab(){
-    //   console.log(this.value);
-    //   // this.router.navigate(["home"]);
-    // }
   }
 
-  // selectedTab(value: any){
-  //   console.log(value);
-  //   this.router.navigate(["home"]);
+  // tabClick(tab: any){
+  //   console.log(tab.tab.textLabel);
+  //   if(tab.tab.textLabel == "Users"){
+  //     this.router.navigate(["users"]);
+  //   }else if(tab.tab.textLabel == "Todos"){
+  //     this.router.navigate(["todos"]);
+  //   }else if(tab.tab.textLabel == "Comments"){
+  //     this.router.navigate(["comments"]);
+  //   }else{
+  //     return;
+  //   }
   // }
 
 }

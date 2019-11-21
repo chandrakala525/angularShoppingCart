@@ -1,0 +1,12 @@
+.mat-accordion .mat-expansion-panel {
+    width: 700px;
+}
+
+.mat-expansion-panel-header-description {
+    flex-grow: 0;
+    margin-left: 9px;
+}
+
+.mat-expansion-panel-header-title {
+    flex-grow: 0;
+}

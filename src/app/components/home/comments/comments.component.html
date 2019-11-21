@@ -1,1 +1,42 @@
-<p>comments works!</p>
+<h4 style="margin-left:25px">Get Todos Data</h4>
+<mat-grid-list cols="9" rowHeight="60px">
+    <mat-grid-tile rowspan="1"></mat-grid-tile>
+
+    <!-- <mat-grid-tile rowspan="1"><label>Id</label>&nbsp;&nbsp;<span>:</span> &nbsp;&nbsp;
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="1" colspan="2">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <input matInput type="number" placeholder="Enter ID" [(ngModel)]="id" name="id" />
+        </mat-form-field>
+    </mat-grid-tile> -->
+    <mat-grid-tile rowspan="1"><label>Post Id</label>&nbsp;&nbsp;<span>:</span> &nbsp;&nbsp; </mat-grid-tile>
+    <mat-grid-tile rowspan="1" colspan="2">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <input matInput type="number" placeholder="Enter Post ID" [(ngModel)]="postId" name="postId" />
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile rowspan="1"><button mat-raised-button (click)="getCommentsDetails()" color="primary">Submit</button></mat-grid-tile>
+    <mat-grid-tile rowspan="1" colspan="3"></mat-grid-tile>
+</mat-grid-list>
+
+
+<div>
+    <mat-accordion width="100">
+        <mat-expansion-panel *ngFor="let comment of commentsData">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Expansion - {{comment.postId}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{comment.name}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div><b>Id:</b> {{comment.id}}</div>
+            <div><b>Post Id:</b> {{comment.postId}}</div>
+            <div><b>Name:</b> {{comment.name}}</div>
+            <div><b>Email:</b> {{comment.email}}</div>
+            <div><b>Body:</b> {{comment.body}}</div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

@@ -29,7 +29,7 @@ message: string;
       this.message="Please enter username and password!"
       this.openSnakBar(this.message);
     }else if(this.username == 'chandu' && this.password == 'chandu'){
-      this.router.navigate(["home"]);
+      this.router.navigate(["nav"]);
     }else{
       this.message="Invalid username or password!"
       this.openSnakBar(this.message);

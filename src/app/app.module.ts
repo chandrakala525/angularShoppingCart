@@ -20,6 +20,7 @@ import { CommentsComponent } from './components/home/comments/comments.component
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     LoginPopupComponent,
     UsersComponent,
     TodosComponent,
-    CommentsComponent
+    CommentsComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

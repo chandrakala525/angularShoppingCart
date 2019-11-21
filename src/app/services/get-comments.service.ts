@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetCommentsService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getComments (): Observable<any>{
+    return this.http.get('https://jsonplaceholder.typicode.com/comments');
+  }
 }
